@@ -1,5 +1,6 @@
 class Person:
-    
+    ''''Абстрактный класс для людей'''
+
     def __init__(self, name: str, role: str):
         self.name = name
         self.role = role
@@ -8,9 +9,8 @@ class Person:
         return (self.name, self.role)
 
     def __str__(self) -> str:
+        '''Метод который должен быть переопределён каждым наследником'''
         pass
-
-
 
 class Student(Person):
 
@@ -19,6 +19,7 @@ class Student(Person):
         self.course = course
         
     def __str__(self) -> str:
+        '''Реализация абстрактого метода для студента'''
         return f'Роль: {self.role}, Имя {self.name}, Курс: {self.course}.'
 
    
@@ -29,6 +30,7 @@ class Teacher(Person):
         self.position = position
     
     def __str__(self) -> str:
+        '''Реализация абстракция метода для преподавателя'''
         return f'Роль: {self.role}, Имя {self.name}, Позиция: {self.position}.'
 
 
