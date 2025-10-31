@@ -20,7 +20,7 @@ class LoggerDecorate(BaseDecorate):
         super().__init__(func)
     
     def __call__(self, *args, **kwds):
-        with open('log.txt', 'a+', encoding='utf-8') as f:
+        with open('./PR23/log.txt', 'a+', encoding='utf-8') as f:
             f.write(f'Function {self.func} was started\n')
             result = self.func(*args, **kwds)
             f.write(f'Function {self.func} was finished\n')
